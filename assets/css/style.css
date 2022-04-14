@@ -99,8 +99,7 @@ li {
 
 /*for wrapper*/
 .wrapper {
-  max-width: 1360px;
-  width: 86%; 
+  width: 70%; 
   margin: 0 auto;
 }
 /*=================================
@@ -120,10 +119,49 @@ li {
   main styling starts here
 =================================*/
 
+.load-container {
+  margin: 80px 0;
+}
 
+.load-container .wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 80px;
+}
 
+.content-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align  : center;
+}
 
+.content-item {
+  display: none;
+  padding: 40px 0;
+  border: .1px solid;
+}
 
+.content { font-size: 25px; }
+
+.load-btn { 
+  border: .5px solid #000;
+  border-radius: 40px;
+  padding: 20px 50px;
+  align-self: center;
+  background-color: transparent;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.load-btn:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.show { display: block; }
 
 
 

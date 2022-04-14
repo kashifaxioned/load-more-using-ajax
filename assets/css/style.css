@@ -138,12 +138,15 @@ li {
 }
 
 .content-item {
-  display: none;
+  display: block;
   padding: 40px 0;
   border: .1px solid;
 }
 
-.content { font-size: 25px; }
+.content-item img {
+  width: 350px;
+  height: 200px;
+}
 
 .load-btn { 
   border: .5px solid #000;
@@ -160,9 +163,6 @@ li {
   background-color: #000;
   color: #fff;
 }
-
-.show { display: block; }
-
 
 
 /*=================================

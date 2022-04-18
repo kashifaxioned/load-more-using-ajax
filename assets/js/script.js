@@ -23,26 +23,48 @@ function showList() {
   else listCount = 0
 
 
-  let xhr = new XMLHttpRequest()
-  xhr.open('GET', "https://jsonplaceholder.typicode.com/photos", true)
+  // let xhr = new XMLHttpRequest()
+  // xhr.open('GET', "https://jsonplaceholder.typicode.com/photos", true)
 
-  xhr.onload = () => {
-    if (xhr.status === 200) {
-      listData = JSON.parse(xhr.responseText)
-      for (let i = listCount; i < listCount + numOfItemsToShow; i++) {
-        const x = listData[i];
-        if (x.id < listCount) {
-          break;
-        } else {
-          contentItem.append(`
-        <li class="content-item">
-        <h2>${x.id}</h2>
-        <img src=${x.url} alt=${x.id}/>
-         </li>
-        `)
-        }
+  // xhr.onload = () => {
+  //   if (xhr.status === 200) {
+  //     listData = JSON.parse(xhr.responseText)
+  //     for (let i = listCount; i < listCount + numOfItemsToShow; i++) {
+  //       const x = listData[i];
+  //       if (x.id < listCount) {
+  //         break;
+  //       } else {
+  //         contentItem.append(`
+  //       <li class="content-item">
+  //       <h2>${x.id}</h2>
+  //       <img src=${x.url} alt=${x.id}/>
+  //        </li>
+  //       `)
+  //       }
+  //     }
+  //   }
+  // }
+  // xhr.send()
+
+  // Using jquery ajax
+
+  $.ajax({
+    url: "https://jsonplaceholder.typicode.com/photos",
+    success:  (xhr) => {  
+        listData = xhr
+        for (let i = listCount; i < listCount + numOfItemsToShow; i++) {
+          const x = listData[i];
+          if (x.id < listCount) {
+            break;
+          } else {
+            contentItem.append(`
+          <li class="content-item">
+          <h2>${x.id}</h2>
+          <img src=${x.url} alt=${x.id}/>
+           </li>
+          `)
+          }
       }
     }
-  }
-  xhr.send()
+  })
 }
